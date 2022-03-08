@@ -8,4 +8,5 @@ Our quantum algorithm is proposed to solve the eigenstate problem of a given loc
 - Python 3.7
 - Numpy
 - Qutip 4.6
+- Scipy
 
