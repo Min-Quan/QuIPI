@@ -62,9 +62,9 @@ class QuIPI_circuit():
         a list of energy and evolved state.
         
         Args:
-            H: Hamiltonian to be solved
-            b: initial state
-            K: iteration step
+            H (Qobj): Hamiltonian to be solved
+            b (Qobj): initial state
+            K (int): iteration step
         '''
         
         state_list = [b] # store the evolved state
@@ -97,9 +97,9 @@ class QuIPI_circuit():
         iteration.
         
         Args:
-            H: Hamiltonian to be solved
-            b: initial state
-            K: iteration step
+            H (Qobj): Hamiltonian to be solved
+            b (Qobj): initial state
+            K (int): iteration step
         '''
         
         # initlization
@@ -140,11 +140,11 @@ class QuIPI_circuit():
         iteration.
         
         Args:
-            H: Hamiltonian to be solved
-            h_list: local operator list
-            b: initial state
-            K: iteration step
-            S: Trotter step
+            H (Qobj): Hamiltonian to be solved
+            h_list (list of Qobj): local operator list
+            b (Qobj): initial state
+            K (int): iteration step
+            S (int): Trotter step
         '''
         
         # initlization
@@ -254,12 +254,12 @@ class QuIPI_circuit():
         iteration.
         
         Args:
-            H: Hamiltonian to be solved
-            h_list: local operator list
-            b: initial state
-            K: iteration step
-            S: Trotter step
-            p_n: probability of noise; a dictionary contains px, pz, pl
+            H (Qobj): Hamiltonian to be solved
+            h_list (list of Qobj): local operator list
+            b (Qobj): initial state
+            K (int): iteration step
+            S (int): Trotter step
+            p_n (dict): probability of noise; a dictionary contains px, pz, pl
         '''
         # initlization
         N = len(H.dims[0]) # number of qubits

@@ -8,10 +8,10 @@ class H_generator():
         which presented in Eq. 10 in the article.
         
         Args:
-            N: number of qubits.
-            a: a vector with length N; tranverse field on each site.
-            J: a matrix N*N; coupling strength for two sites.
-            shift_E: shift-energy applied.
+            N (int): number of qubits.
+            a (list): a vector with length N; tranverse field on each site.
+            J (list): a matrix N*N; coupling strength for two sites.
+            shift_E (number): shift-energy applied.
         '''
         
         sx_list = [] # i-th element is sigma x performing on i-th qubit
@@ -49,10 +49,10 @@ class H_generator():
         Hamiltonian with Trotter decomposition.
         
         Args:
-            N: number of qubits.
-            a: a vector with length N; tranverse field on each site.
-            J: a matrix N*N; coupling strength for two sites.
-            shift_E: shift-energy applied.
+            N (int): number of qubits.
+            a (list): a vector with length N; tranverse field on each site.
+            J (list): a matrix N*N; coupling strength for two sites.
+            shift_E (number): shift-energy applied.
         '''
         
         sx_list = [] # i-th element is sigma x performing on i-th qubit
@@ -88,9 +88,9 @@ class H_generator():
         its corresponding bond distance.
         
         Args:
-            ind: the index of data; the bond distance is from 0.2
+            ind (int): the index of data; the bond distance is from 0.2
             to 2.85 and the the interval is 0.05.
-            shift_E: shift-energy applied.
+            shift_E (number): shift-energy applied.
         '''
         
         # Data from paper (arXiv:1512.06860v2) table 1: R, I, Z0, Z1, Z0Z1, X0X1, Y0Y1
@@ -167,10 +167,10 @@ class H_generator():
         Eq. 12 in the article.
         
         Args:
-            N: number of qubits.
-            h: a vector with length N; tranverse field on each site.
-            J: a matrix N*N; coupling strength for two sites.
-            shift_E: shift-energy applied.
+            N (int): number of qubits.
+            h (number): filed strength.
+            J (number): coupling strength.
+            shift_E (number): shift-energy applied.
         '''
         
         sx_list=[] # i-th element is sigma x performing on i-th qubit
