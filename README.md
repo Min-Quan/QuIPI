@@ -4,11 +4,6 @@ This repository contains the demonstration code of the article "[Inverse iterati
 ## Introduction
 Our quantum algorithm is proposed to solve the eigenstate problem of a given local Hamiltonian. The principle of this algorithm is iteratively performing the inverse Hamiltonian onto a quantum state, so that it converges to an approximate ground state of the Hamiltonian. Here, the inverse Hamiltonian is constructed by integrate of unitaries with the help of continuous-variable qumode.
 
-### Principle
-- Inverse powered iteration method: $|b \rangle^{(k+1)} = \frac{\hat{H} |b\range^{(k)}}{|\hat{H} |b\range^{(k)}|}$. The evolved state converges to the ground state of Hamiltonian $\hat{H}$ while the initial state $|b\rangle^{(0)}$ has a non-zero overlap to the ground state.
-- Fourier transformation of the inverse Hamiltonian: $\hat{H}^{-1} = i \int_{0}^{\infty} e^{-i \hat{H} p} dp$
-- Qumode assistance implementation of inverse Hamiltonian: $|b\rangle^{(k+1)} = -i \hat{H}^{-1} |b\rangle^{(k)} \propto \langle q=0|e^{-i \hat{H} \hat{p}}|R\rangle |b\rangle^{(k)}$ with $|R\rangle = \int_{0}^{\infty} |p\rangle dp$.
-
 ## Dependecies
 - Python 3.7
 - Numpy
@@ -17,3 +12,7 @@ Our quantum algorithm is proposed to solve the eigenstate problem of a given loc
 - matplotlib
 
 ## File description
+- [H_generator.py](https://github.com/Min-Quan/QuIPI/blob/main/H_generator.py): a package that can generator Hamiltonian of Hydrogen molecular, transverse field Ising model, and Kitaev model. And it also can generate the local operators of the Ising model, which can be used to apply the Hamiltonian with the first order Trotter decomposition.
+- [QuIPI_circuit.py](https://github.com/Min-Quan/QuIPI/blob/main/QuIPI_circuit.py): a package that performs the proposed algorithm. It gives the function that 1. solve the approximate ground state by applying ideal inverse Hamiltonian; 2. evolve the state by our quantum algorithm, where the unitary operator is directly applied; 3. evolve the state by our quantum algorithm with the first order Trotter decomposition under the noiseless or noisy environment.
+- [Demon_of_H2_bond_dissociation.ipynb](https://github.com/Min-Quan/QuIPI/blob/main/Demon_of_H2_bond_dissociation.ipynb): the demonstration of solving the ground state energy of Hydrogen molecular with different bond distance.
+- [Demon_of_kitaev_ring.ipynb](https://github.com/Min-Quan/QuIPI/blob/main/Demon_of_kitaev_ring.ipynb): the demonstration of solving the ground state energy of Kitaev ring with different parameter.
